@@ -1,0 +1,62 @@
+<!-- Ashes of the Blood War – Survivor's Record -->
+<div class="sheet-banner">
+  <h1>Ashes of the Blood War – Survivor's Record</h1>
+</div>
+
+<div class="sheet-tabs">
+  <input type="radio" name="sheet-tab" value="core" checked><span>Core</span>
+  <input type="radio" name="sheet-tab" value="inventory"><span>Inventory</span>
+  <input type="radio" name="sheet-tab" value="spells"><span>Spells</span>
+  <input type="radio" name="sheet-tab" value="base"><span>Base Log</span>
+</div>
+
+<!-- CORE TAB -->
+<div class="sheet-tab-content sheet-core">
+  <h2>Ability Scores</h2>
+  <div class="ability-grid">
+    <label>STR <input type="number" name="attr_str" value="10"></label>
+    <label>DEX <input type="number" name="attr_dex" value="10"></label>
+    <label>CON <input type="number" name="attr_con" value="10"></label>
+    <label>INT <input type="number" name="attr_int" value="10"></label>
+    <label>WIS <input type="number" name="attr_wis" value="10"></label>
+    <label>CHA <input type="number" name="attr_cha" value="10"></label>
+  </div>
+
+  <h2>Survival Conditions</h2>
+  <label>Madness Points: <input type="number" name="attr_madness" value="0" min="0" max="10"></label><br>
+  <label>Hunger: <input type="checkbox" name="attr_hungry"> Starving</label><br>
+  <label>Thirst: <input type="checkbox" name="attr_thirsty"> Dehydrated</label><br>
+  <label>Exhaustion Level: <input type="number" name="attr_exhaustion" min="0" max="6"></label>
+
+  <h2>Core Rolls</h2>
+  <button type="roll" value="/roll 1d20 + @{str}" name="roll_str">Strength</button>
+  <button type="roll" value="/roll 1d20 + @{dex}" name="roll_dex">Dexterity</button>
+  <button type="roll" value="/roll 1d20 + @{wis}" name="roll_survival">Survival</button>
+</div>
+
+<!-- INVENTORY TAB -->
+<div class="sheet-tab-content sheet-inventory">
+  <h2>Crafted Items & Gear</h2>
+  <fieldset class="repeating_items">
+    <input type="text" name="attr_item_name" placeholder="Item Name">
+    <input type="text" name="attr_item_description" placeholder="Description">
+  </fieldset>
+</div>
+
+<!-- SPELLS TAB -->
+<div class="sheet-tab-content sheet-spells">
+  <h2>Spells</h2>
+  <fieldset class="repeating_spells">
+    <input type="text" name="attr_spell_name" placeholder="Spell Name">
+    <input type="number" name="attr_spell_level" placeholder="Level" min="0" max="5">
+    <input type="checkbox" name="attr_spell_prepared"> Prepared
+  </fieldset>
+</div>
+
+<!-- BASE LOG TAB -->
+<div class="sheet-tab-content sheet-base">
+  <h2>Base Log</h2>
+  <label>Crafting Role: <input type="text" name="attr_craft_role"></label><br>
+  <label>Blueprints Used: <input type="text" name="attr_blueprints_used"></label><br>
+  <label>Last Project Assisted: <input type="text" name="attr_last_project"></label>
+</div>
