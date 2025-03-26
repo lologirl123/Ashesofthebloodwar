@@ -1,53 +1,44 @@
-.sheet-banner {
-  background: #111;
-  color: #e0e0e0;
+.sheet-header {
   text-align: center;
   font-size: 20px;
-  border-bottom: 2px solid #880000;
+  font-weight: bold;
+  background: #111;
+  color: #eee;
   padding: 10px;
+  border-bottom: 2px solid #880000;
 }
 
-.sheet-tabs {
-  display: flex;
-  gap: 10px;
-  margin: 10px;
-}
-.sheet-tabs input[type="radio"] {
-  display: none;
-}
-.sheet-tabs span {
-  padding: 6px 12px;
+.sheet-tab-label {
+  display: inline-block;
   background: #222;
   color: white;
-  border: 1px solid #444;
+  padding: 6px 12px;
+  margin-right: 5px;
   cursor: pointer;
-}
-input[name="sheet-tab"]:checked + span {
-  background: #880000;
   font-weight: bold;
+}
+input.sheet-tab {
+  display: none;
+}
+
+input.sheet-tab[value="core"]:checked ~ .sheet-core,
+input.sheet-tab[value="inventory"]:checked ~ .sheet-inventory,
+input.sheet-tab[value="spells"]:checked ~ .sheet-spells,
+input.sheet-tab[value="base"]:checked ~ .sheet-base {
+  display: block;
 }
 
 .sheet-tab-content {
   display: none;
   padding: 10px;
-  background: #1a1a1a;
+  background-color: #1a1a1a;
   color: white;
-  border-top: 1px solid #444;
-}
-input[name="sheet-tab"][value="core"]:checked ~ .sheet-core,
-input[name="sheet-tab"][value="inventory"]:checked ~ .sheet-inventory,
-input[name="sheet-tab"][value="spells"]:checked ~ .sheet-spells,
-input[name="sheet-tab"][value="base"]:checked ~ .sheet-base {
-  display: block;
+  border: 1px solid #333;
+  margin-top: 10px;
 }
 
-.ability-grid {
+.sheet-abilities {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 5px;
-  margin-bottom: 10px;
-}
-
-input[type="text"], input[type="number"] {
-  width: 100%;
 }
